@@ -4,3 +4,4 @@
  session_start();
  include_once('/wamp/ziApp/v.0.0.1/ziApp.class.php');
  $app=new ziApp(realpath('.'));
+ $app->showSite();
