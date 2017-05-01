@@ -9,12 +9,19 @@
 class CUsers extends ziApp{
 
     public function __construct($comp,$pdo){
-        include('model_'.$comp.'.php');        
+        include('model_'.$comp.'.php');
+        include('view_'.$comp.'.php'); 
         $Mtemp='M'.$comp;
+        $Vtemp='V'.$comp;
         $this->model=new $Mtemp($pdo);
+        $this->view=new $Vtemp();
     }
     
     public function getFormLogin(){
-        return $this->model->test();
+        return file_get_contents('views\getFormLogin.html',FILE_USE_INCLUDE_PATH);
+    }
+    
+    public function login(){
+        return $this->model->login();
     }
 }

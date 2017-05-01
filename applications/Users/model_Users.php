@@ -12,7 +12,7 @@ class MUsers extends ziApp{
         $this->pdo=$dbpdo;
     }
     
-    public function test(){
+    public function login(){
         $sql='SELECT nom, prenom FROM utilisateurs WHERE Matricule="456"';
         $req=$this->pdo->prepare($sql);
         $req->execute();
